@@ -28,6 +28,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="919-T9-gnm" kind="show" identifier="loginSegue" id="5q2-UY-dqD"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3D-3B-Xz4">
                                 <rect key="frame" x="16" y="607" width="343" height="40"/>
@@ -164,6 +167,92 @@
             </objects>
             <point key="canvasLocation" x="1834" y="-358"/>
         </scene>
+        <!--Login-->
+        <scene sceneID="8se-34-Ggs">
+            <objects>
+                <viewController title="Login" id="919-T9-gnm" customClass="LoginViewController" customModule="Run_And_Fund" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CUE-W4-ccF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wvq-KU-dib">
+                                <rect key="frame" x="0.0" y="64" width="375" height="400"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter login related information below." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHd-x3-k87">
+                                        <rect key="frame" x="16" y="8" width="343" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mq5-6P-mSO">
+                                        <rect key="frame" x="16" y="144" width="343" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="bA5-pu-5I4"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2t-dq-q3m">
+                                        <rect key="frame" x="16" y="216" width="343" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="b4k-R7-fC5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginButtonIsClicked:" destination="919-T9-gnm" eventType="touchUpInside" id="SKx-hC-9uh"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Email ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BVi-G2-WCT">
+                                        <rect key="frame" x="16" y="88" width="343" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="zVF-Hw-GEU"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="v2t-dq-q3m" secondAttribute="trailing" constant="16" id="01V-TK-JWx"/>
+                                    <constraint firstAttribute="height" constant="400" id="08B-Cq-rDn"/>
+                                    <constraint firstItem="mq5-6P-mSO" firstAttribute="top" secondItem="BVi-G2-WCT" secondAttribute="bottom" constant="16" id="JDY-1k-G3o"/>
+                                    <constraint firstItem="LHd-x3-k87" firstAttribute="top" secondItem="wvq-KU-dib" secondAttribute="top" constant="8" id="U6a-D0-u59"/>
+                                    <constraint firstAttribute="trailing" secondItem="LHd-x3-k87" secondAttribute="trailing" constant="16" id="Xf9-BT-SJ8"/>
+                                    <constraint firstItem="BVi-G2-WCT" firstAttribute="top" secondItem="LHd-x3-k87" secondAttribute="bottom" constant="32" id="aRn-vK-7sk"/>
+                                    <constraint firstItem="LHd-x3-k87" firstAttribute="leading" secondItem="wvq-KU-dib" secondAttribute="leading" constant="16" id="bS4-jG-6Rv"/>
+                                    <constraint firstItem="v2t-dq-q3m" firstAttribute="top" secondItem="mq5-6P-mSO" secondAttribute="bottom" constant="32" id="kZL-sw-z7N"/>
+                                    <constraint firstItem="v2t-dq-q3m" firstAttribute="leading" secondItem="wvq-KU-dib" secondAttribute="leading" constant="16" id="nZX-Hh-N7y"/>
+                                    <constraint firstAttribute="trailing" secondItem="BVi-G2-WCT" secondAttribute="trailing" constant="16" id="tkj-iI-YE4"/>
+                                    <constraint firstItem="mq5-6P-mSO" firstAttribute="leading" secondItem="wvq-KU-dib" secondAttribute="leading" constant="16" id="ttJ-OR-cV2"/>
+                                    <constraint firstAttribute="trailing" secondItem="mq5-6P-mSO" secondAttribute="trailing" constant="16" id="v3r-Nh-J3H"/>
+                                    <constraint firstItem="BVi-G2-WCT" firstAttribute="leading" secondItem="wvq-KU-dib" secondAttribute="leading" constant="16" id="wvO-Mf-Sfh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nyF-8y-nLp" firstAttribute="trailing" secondItem="wvq-KU-dib" secondAttribute="trailing" id="B1u-t3-HK0"/>
+                            <constraint firstItem="wvq-KU-dib" firstAttribute="top" secondItem="nyF-8y-nLp" secondAttribute="top" id="oBS-VV-9OD"/>
+                            <constraint firstItem="wvq-KU-dib" firstAttribute="leading" secondItem="nyF-8y-nLp" secondAttribute="leading" id="xPx-NI-VGF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nyF-8y-nLp"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailIDFieldOutlet" destination="BVi-G2-WCT" id="d8t-TL-ysB"/>
+                        <outlet property="passwordField" destination="mq5-6P-mSO" id="qqH-45-LDw"/>
+                        <segue destination="LWl-R6-GOo" kind="show" identifier="goToGetStarted" id="5zS-CO-IP7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yK9-ra-hl3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1832.8" y="599.55022488755628"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="1fA-1K-Z7J">
             <objects>
@@ -199,6 +288,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gOD-hG-txc"/>
+        <segue reference="5zS-CO-IP7"/>
     </inferredMetricsTieBreakers>
 </document>
