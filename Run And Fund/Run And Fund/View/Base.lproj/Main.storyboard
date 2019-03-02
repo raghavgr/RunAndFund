@@ -115,6 +115,9 @@
                                         <state key="normal" title="Sign Up">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signUpButtonIsClicked:" destination="Sc8-je-tSF" eventType="touchUpInside" id="EY7-He-GjJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -146,10 +149,32 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XUl-k3-0UQ"/>
                     </view>
+                    <connections>
+                        <outlet property="emailIDFieldOutlet" destination="n42-PF-1hq" id="Wzy-Uf-ASz"/>
+                        <outlet property="nameFieldOutlet" destination="Spd-sB-DwO" id="lmR-Hx-MIl"/>
+                        <outlet property="passwordFieldOutlet" destination="tyq-Ki-h3N" id="SKE-yE-qOH"/>
+                        <outlet property="signUpButtonOutlet" destination="3Jl-Qp-ysq" id="Mhh-pp-rpb"/>
+                        <segue destination="LWl-R6-GOo" kind="show" identifier="goToGetStarted" id="ueC-eN-Q5j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JY3-WP-jLp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1884" y="21.139430284857571"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1fA-1K-Z7J">
+            <objects>
+                <viewController id="LWl-R6-GOo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1CA-Ci-hjN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="TH6-Xt-pkW"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Oy-1P-Zbk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2668" y="4"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OvR-Z4-KLF">
