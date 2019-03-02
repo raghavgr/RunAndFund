@@ -29,6 +29,11 @@ class SignUpViewController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         
         view.addGestureRecognizer(tap)
+        
+        // changes made to show error in dark mode
+        SVProgressHUD.setDefaultStyle(.dark)
+        SVProgressHUD.setFont(UIFont.boldSystemFont(ofSize: 17))
+        SVProgressHUD.setMaximumDismissTimeInterval(0.5)
 
     }
     
