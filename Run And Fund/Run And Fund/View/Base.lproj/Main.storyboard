@@ -58,6 +58,21 @@
             </objects>
             <point key="canvasLocation" x="992.79999999999995" y="26.53673163418291"/>
         </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="QH8-Tq-jnI">
+            <objects>
+                <viewController id="Sc8-je-tSF" customClass="SignUpViewController" customModule="Run_And_Fund" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s0h-eY-fHn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="XUl-k3-0UQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JY3-WP-jLp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1885" y="22"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="OvR-Z4-KLF">
             <objects>
