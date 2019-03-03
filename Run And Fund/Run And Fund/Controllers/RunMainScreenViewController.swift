@@ -86,7 +86,7 @@ class RunMainScreenViewController: BackgroundViewController {
         })
         alertController.addAction(UIAlertAction(title: "Discard", style: .destructive) { _ in
             self.stopRun()
-            _ = self.navigationController?.popToRootViewController(animated: true)
+            //_ = self.navigationController?.popToRootViewController(animated: true)
         })
         
         present(alertController, animated: true)
