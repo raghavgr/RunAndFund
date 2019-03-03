@@ -28,6 +28,7 @@
 		C1BE59DC222BD75C00A6A289 /* UnitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE59D8222BD75C00A6A289 /* UnitExtensions.swift */; };
 		C1BE59DF222BDBE600A6A289 /* StoryboardSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE59DE222BDBE600A6A289 /* StoryboardSupport.swift */; };
 		C1BE59E1222BDCDA00A6A289 /* RunDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE59E0222BDCDA00A6A289 /* RunDetailedViewController.swift */; };
+		C1BE59E3222C4D9B00A6A289 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE59E2222C4D9B00A6A289 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		C1BE59D8222BD75C00A6A289 /* UnitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitExtensions.swift; sourceTree = "<group>"; };
 		C1BE59DE222BDBE600A6A289 /* StoryboardSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardSupport.swift; sourceTree = "<group>"; };
 		C1BE59E0222BDCDA00A6A289 /* RunDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunDetailedViewController.swift; sourceTree = "<group>"; };
+		C1BE59E2222C4D9B00A6A289 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				1DA84A5B222BA94E004F5688 /* CharityPerMileViewController.swift */,
 				1DA84A5F222BC5C4004F5688 /* RunMainScreenViewController.swift */,
 				C1BE59E0222BDCDA00A6A289 /* RunDetailedViewController.swift */,
+				C1BE59E2222C4D9B00A6A289 /* ProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				1DA84A5A222B54E6004F5688 /* CharitySelectionViewController.swift in Sources */,
 				1DE69505222B0B1D000DEA0B /* WelcomeViewController.swift in Sources */,
 				C1BE59DC222BD75C00A6A289 /* UnitExtensions.swift in Sources */,
+				C1BE59E3222C4D9B00A6A289 /* ProfileViewController.swift in Sources */,
 				0E460619222BF1A90032CD0E /* MoonRunner.xcdatamodeld in Sources */,
 				C1BE59D9222BD75C00A6A289 /* MulticolorPolyline.swift in Sources */,
 				C1BE59D4222BD72200A6A289 /* CoreDataStack.swift in Sources */,

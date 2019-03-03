@@ -17,8 +17,8 @@ class RunMainScreenViewController: BackgroundViewController
     
     // Start & Run View configurations
     @IBOutlet weak var introLabel: UIView!
-    
     @IBOutlet weak var unitsView: UIView!
+    
     // Unit labels that need to be updated
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -39,6 +39,7 @@ class RunMainScreenViewController: BackgroundViewController
     private var locationList: [CLLocation] = []
     
     private var charityPerMile:String = ""
+    private var charityTitle:String = ""
 
     override func viewDidLoad()
     {
@@ -63,6 +64,7 @@ class RunMainScreenViewController: BackgroundViewController
             
         }
     }
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -125,11 +127,16 @@ class RunMainScreenViewController: BackgroundViewController
         }
         startLocationUpdates()
     }
+    
     private func stopRun() {
         introLabel.isHidden = false
         unitsView.isHidden = true
         startButton.isHidden = false
         stopButton.isHidden = true
+        if let coor = locationManager.location?.coordinate {
+            let center = CLLocationCoordinate2D(latitude: coor.latitude, longitude: coor.longitude)
+            self.mapView.setRegion(MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)), animated: true)
+        }
         locationManager.stopUpdatingLocation()
     }
     
@@ -138,8 +145,7 @@ class RunMainScreenViewController: BackgroundViewController
         locationManager.distanceFilter = 1
     }
     
-    private func saveRun()
-    {
+    private func saveRun() {
         let newRun = Run(context: CoreDataStack.context)
         newRun.distance = distance.value
         newRun.duration = Int16(seconds)
@@ -164,25 +170,26 @@ class RunMainScreenViewController: BackgroundViewController
     
     @IBAction func logoutIsClicked(_ sender: UIBarButtonItem)
     {
-            SVProgressHUD.show()
-            do
-            {
-                try Auth.auth().signOut()
-                
-                // To take user back to rootview i.e the first screen of our app.
-                
-                SVProgressHUD.showSuccess(withStatus: "Sucessfully Logged out")
-                
-                navigationController?.popToRootViewController(animated: true)
-            }
-            catch
-            {
-                let errorMessage:String = error.localizedDescription.description
-                
-                SVProgressHUD.showError(withStatus:errorMessage)
-                
-                print(error.localizedDescription)
-            }
+        self.performSegue(withIdentifier: .profile, sender: nil)
+//            SVProgressHUD.show()
+//            do
+//            {
+//                try Auth.auth().signOut()
+//
+//                // To take user back to rootview i.e the first screen of our app.
+//
+//                SVProgressHUD.showSuccess(withStatus: "Sucessfully Logged out")
+//
+//                navigationController?.popToRootViewController(animated: true)
+//            }
+//            catch
+//            {
+//                let errorMessage:String = error.localizedDescription.description
+//
+//                SVProgressHUD.showError(withStatus:errorMessage)
+//
+//                print(error.localizedDescription)
+//            }
         
     }
     
@@ -204,6 +211,7 @@ class RunMainScreenViewController: BackgroundViewController
                 
             }
             self.charityPerMile = snapshot.childSnapshot(forPath: "charityPerMile").value as! String
+            self.charityTitle = snapshot.childSnapshot(forPath: "charityCategory").value as! String
             print(self.charityPerMile)
             
         })
@@ -244,6 +252,7 @@ class RunMainScreenViewController: BackgroundViewController
 extension RunMainScreenViewController: SegueHandlerType {
     enum SegueIdentifier: String {
         case details = "RunDetailedViewController"
+        case profile = "showProfile"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -252,7 +261,13 @@ extension RunMainScreenViewController: SegueHandlerType {
             let destination = segue.destination as! RunDetailedViewController
             destination.run = run
             destination.donationAmount = charityPerMile
+        case .profile:
+            let destination = segue.destination as! ProfileViewController
+            destination.user = Auth.auth().currentUser
+            destination.charityTitle = self.charityTitle
+            destination.charityPerMile = self.charityPerMile
         }
+        
     }
 }
 
