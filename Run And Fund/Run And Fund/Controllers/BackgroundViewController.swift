@@ -30,7 +30,7 @@ class BackgroundViewController: UIViewController {
     {
         //gradient layer
         let gradientLayer = CAGradientLayer()
-        
+        //
         //define colors
         let colorTop = UIColor(red: 255.0 / 255.0, green: 226.0 / 255.0, blue: 89.0 / 255.0, alpha: 1.0).cgColor
         let colorBottom = UIColor(red: 255.0 / 255.0, green: 167.0 / 255.0, blue: 81.0 / 255.0, alpha: 1.0).cgColor
