@@ -37,12 +37,17 @@ class RunMainScreenViewController: BackgroundViewController
     private var timer: Timer?
     private var distance = Measurement(value: 0, unit: UnitLength.meters)
     private var locationList: [CLLocation] = []
+    
+    private var charityPerMile:String = ""
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
         //self.mapView.setRegion(region!, animated: true)
         navigationItem.hidesBackButton = true
+        
+        //Added method retrive charity per mile data  from firebase
+        retriveCharityPerMileDetail()
         unitsView.isHidden = true
         startButton.layer.cornerRadius = 30
         startButton.clipsToBounds = true
@@ -132,11 +137,15 @@ class RunMainScreenViewController: BackgroundViewController
         locationManager.distanceFilter = 3
     }
     
-    private func saveRun() {
+    private func saveRun()
+    {
         let newRun = Run(context: CoreDataStack.context)
         newRun.distance = distance.value
         newRun.duration = Int16(seconds)
         newRun.timestamp = Date()
+        
+        //Added code to save data to firebase
+        saveRunToFireBase(distanceValue: distance.value, durationValue: Int16(seconds))
         
         for location in locationList {
             let locationObject = Location(context: CoreDataStack.context)
@@ -176,6 +185,58 @@ class RunMainScreenViewController: BackgroundViewController
         
     }
     
+     //Added method retrive charity per mile data  from firebase
+    func retriveCharityPerMileDetail()
+    {
+        let currentUser = Auth.auth().currentUser
+        let userID = currentUser?.uid
+        
+        let demographicReference = Database.database().reference().child(userID!).child("CharityInfo")
+        
+        
+        demographicReference.observeSingleEvent(of: .value, with: { snapshot in
+            
+            if !snapshot.exists()
+            {
+                self.charityPerMile = ""
+                return
+                
+            }
+            self.charityPerMile = snapshot.childSnapshot(forPath: "charityPerMile").value as! String
+            print(self.charityPerMile)
+            
+        })
+    }
+
+    func saveRunToFireBase(distanceValue:Double , durationValue:Int16)
+    {
+        SVProgressHUD.show()
+        let userUID:String = (Auth.auth().currentUser?.uid)!
+        
+        let timestampValue = Date().currentTimeMillis()
+
+        
+        let userCharityDatabase = Database.database().reference().child(userUID).child(String(timestampValue!))
+        
+        let userCharityDictionary = ["distanceRan":distanceValue,
+                                     "duration":durationValue] as [String : Any]
+        
+        userCharityDatabase.setValue(userCharityDictionary)
+        {
+            (error,reference ) in
+            
+            if(error != nil)
+            {
+                SVProgressHUD.showError(withStatus:"Error while storing Run Distance information!!!")
+            }
+            else
+            {
+                SVProgressHUD.showSuccess(withStatus:"Sucessfully saved Run Distance information.")
+            }
+            
+        }
+    }
+    
 }
 
 
@@ -213,5 +274,11 @@ extension RunMainScreenViewController:CLLocationManagerDelegate {
             
             locationList.append(newLocation)
         }
+    }
+}
+
+extension Date {
+    func currentTimeMillis() -> Int64! {
+        return Int64(self.timeIntervalSince1970 * 1000)
     }
 }

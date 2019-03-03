@@ -24,6 +24,18 @@ class LoginViewController: BackgroundViewController
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //Below is the code added to dismiss the keyboard.
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
+    }
+    
+    // Method to dismiss the keyboard
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
     }
     
 
