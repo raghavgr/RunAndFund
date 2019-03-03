@@ -45,6 +45,10 @@ class CharitySelectionViewController: UIViewController, UITableViewDataSource, U
         
         cell.textLabel?.text = "\(charityArray[indexPath.row])"
         
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.lineBreakMode = .byWordWrapping
+        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 15.0)
+        
         return cell
     }
     

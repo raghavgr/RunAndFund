@@ -288,10 +288,10 @@
             </objects>
             <point key="canvasLocation" x="2668" y="3.1484257871064472"/>
         </scene>
-        <!--View Controller-->
+        <!--Charity Per Miles-->
         <scene sceneID="v3c-z7-7wS">
             <objects>
-                <viewController id="e9e-VZ-esd" sceneMemberID="viewController">
+                <viewController title="Charity Per Miles" id="e9e-VZ-esd" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l0P-ta-ygb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
