@@ -138,6 +138,9 @@ class RunMainScreenViewController: BackgroundViewController
         newRun.duration = Int16(seconds)
         newRun.timestamp = Date()
         
+        //Added code to save data to firebase
+        saveRunToFireBase(distanceValue: distance.value, durationValue: Int16(seconds))
+        
         for location in locationList {
             let locationObject = Location(context: CoreDataStack.context)
             locationObject.timestamp = location.timestamp
@@ -198,6 +201,35 @@ class RunMainScreenViewController: BackgroundViewController
             
         })
     }
+
+    func saveRunToFireBase(distanceValue:Double , durationValue:Int16)
+    {
+        SVProgressHUD.show()
+        let userUID:String = (Auth.auth().currentUser?.uid)!
+        
+        let timestampValue = Date().currentTimeMillis()
+
+        
+        let userCharityDatabase = Database.database().reference().child(userUID).child(String(timestampValue!))
+        
+        let userCharityDictionary = ["distanceRan":distanceValue,
+                                     "duration":durationValue] as [String : Any]
+        
+        userCharityDatabase.setValue(userCharityDictionary)
+        {
+            (error,reference ) in
+            
+            if(error != nil)
+            {
+                SVProgressHUD.showError(withStatus:"Error while storing Run Distance information!!!")
+            }
+            else
+            {
+                SVProgressHUD.showSuccess(withStatus:"Sucessfully saved Run Distance information.")
+            }
+            
+        }
+    }
     
 }
 
@@ -233,5 +265,11 @@ extension RunMainScreenViewController:CLLocationManagerDelegate {
             
             locationList.append(newLocation)
         }
+    }
+}
+
+extension Date {
+    func currentTimeMillis() -> Int64! {
+        return Int64(self.timeIntervalSince1970 * 1000)
     }
 }
