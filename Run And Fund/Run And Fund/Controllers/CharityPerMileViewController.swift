@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 class CharityPerMileViewController: BackgroundViewController, UIPickerViewDelegate,UIPickerViewDataSource
 {
@@ -72,6 +73,35 @@ class CharityPerMileViewController: BackgroundViewController, UIPickerViewDelega
     }
     
     
-
+    
+    
+    @IBAction func submitButtonClicked(_ sender: UIButton)
+    {
+        SVProgressHUD.show()
+        let userUID:String = (Auth.auth().currentUser?.uid)!
+        
+        let userCharityDatabase = Database.database().reference().child(userUID).child("CharityInfo")
+        
+        let userCharityDictionary = ["charityCategory":charitySelected!,
+                                         "charityPerMile":charityAmountSelected] as [String : Any]
+        
+        userCharityDatabase.setValue(userCharityDictionary)
+        {
+            (error,reference ) in
+            
+            if(error != nil)
+            {
+                SVProgressHUD.showError(withStatus:"Error while storing Charity information!!!")
+            }
+            else
+            {
+                SVProgressHUD.showSuccess(withStatus:"Sucessfully saved Charity information.")
+                self.performSegue(withIdentifier: "goToMainScreen", sender: self)
+            }
+            
+        }
+        
+    }
+    
 
 }

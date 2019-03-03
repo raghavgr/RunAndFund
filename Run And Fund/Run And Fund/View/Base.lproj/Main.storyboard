@@ -61,6 +61,7 @@
                     <navigationItem key="navigationItem" title="Welcome" id="gkK-0T-Mno"/>
                     <connections>
                         <segue destination="LWl-R6-GOo" kind="show" identifier="goToGetStarted" id="gOD-hG-txc"/>
+                        <segue destination="Kor-L7-NRI" kind="show" identifier="goToMainScreen" id="lma-R8-QvB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -245,6 +246,7 @@
                         <outlet property="emailIDFieldOutlet" destination="BVi-G2-WCT" id="d8t-TL-ysB"/>
                         <outlet property="passwordField" destination="mq5-6P-mSO" id="qqH-45-LDw"/>
                         <segue destination="LWl-R6-GOo" kind="show" identifier="goToGetStarted" id="5zS-CO-IP7"/>
+                        <segue destination="Kor-L7-NRI" kind="show" identifier="goToMainScreen" id="ZSc-JG-S8N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yK9-ra-hl3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -328,6 +330,9 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitButtonClicked:" destination="e9e-VZ-esd" eventType="touchUpInside" id="J9a-Qh-N0e"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xa7-Vv-8Ij">
                                 <rect key="frame" x="0.0" y="288" width="414" height="200"/>
@@ -365,18 +370,19 @@
                         <outlet property="charityNameOutlet" destination="K9I-KJ-G15" id="ozW-O6-0O1"/>
                         <outlet property="charityPickerOutlet" destination="xa7-Vv-8Ij" id="XgI-C9-91U"/>
                         <outlet property="userNameLabel" destination="36x-9z-Lzb" id="Ao7-25-jFJ"/>
+                        <segue destination="Kor-L7-NRI" kind="show" identifier="goToMainScreen" id="LCr-pw-9zH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6VD-4y-suT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3662.3188405797105" y="-35.054347826086961"/>
         </scene>
-        <!--View Controller-->
+        <!--Run & Fund-->
         <scene sceneID="uPS-VN-NFX">
             <objects>
-                <viewController id="Kor-L7-NRI" sceneMemberID="viewController">
+                <viewController title="Run &amp; Fund" id="Kor-L7-NRI" customClass="RunMainScreenViewController" customModule="Run_And_Fund" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qqn-SZ-24U">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="4Tb-Oq-7Vj"/>
@@ -384,7 +390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bt9-sk-pZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4524" y="-758"/>
+            <point key="canvasLocation" x="4986" y="-35"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OvR-Z4-KLF">
@@ -406,6 +412,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gOD-hG-txc"/>
+        <segue reference="ZSc-JG-S8N"/>
+        <segue reference="5zS-CO-IP7"/>
     </inferredMetricsTieBreakers>
 </document>
