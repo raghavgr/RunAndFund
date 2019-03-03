@@ -25,6 +25,7 @@ class CharitySelectionViewController: UIViewController, UITableViewDataSource
     {
         super.viewDidLoad()
         getCharityData(url:"\(baseURL)\(APP_ID)")
+        navigationItem.hidesBackButton = true
 
     }
     
@@ -62,7 +63,15 @@ class CharitySelectionViewController: UIViewController, UITableViewDataSource
                 
                 for charity in charityDataJSON["data"]
                 {
-                    self.charityArray.insert(charity.1["categoryDesc"].stringValue, at:i)
+                    
+                    let charityStringValue = charity.1["categoryDesc"].stringValue
+                    
+                    if(charityStringValue == "" || charityStringValue == "Not Provided")
+                    {
+                        continue
+                    }
+                    
+                    self.charityArray.insert(charityStringValue, at:i)
                     
                     i = i + 1
 
