@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 import SVProgressHUD
 
-class CharitySelectionViewController: UIViewController, UITableViewDataSource
+class CharitySelectionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
 
     let baseURL = "https://data.orghunter.com/v1/categories?user_key="
@@ -49,6 +49,30 @@ class CharitySelectionViewController: UIViewController, UITableViewDataSource
     }
     
     
+    //Table View delegate method
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        let charitySelected = charityArray[indexPath.row]
+        
+        let alert = UIAlertController(title:"Thank You!!!", message:"You have selected \(charitySelected) as your charity category", preferredStyle:.alert)
+        
+        let alertOKAction = UIAlertAction(title:"OK", style:.default)
+        { (alertAction) in
+        
+            self.performSegue(withIdentifier:"goToCharityConfig", sender: nil)
+        }
+        
+        let alertCancelAction = UIAlertAction(title:"Cancel", style:.cancel)
+ 
+        
+        alert.addAction(alertOKAction)
+        alert.addAction(alertCancelAction)
+        
+        self.present(alert,animated:true)
+    }
+    
+    
     //MARK: - Networking
     /***************************************************************/
     func getCharityData(url:String)
@@ -57,7 +81,7 @@ class CharitySelectionViewController: UIViewController, UITableViewDataSource
             
             if(response.result.isSuccess)
             {
-                print("We are Succcessfully able to call the bitcoin service.")
+                print("We are Succcessfully able to call the Charity service.")
                 
                 let charityDataJSON :JSON = JSON(response.result.value!)
                 
@@ -86,7 +110,7 @@ class CharitySelectionViewController: UIViewController, UITableViewDataSource
             
             if (response.result.isFailure)
             {
-                print("Its a failure to call the bitcoin URL \(String(describing: response.result.error))")
+                print("Its a failure to call the charity URL \(String(describing: response.result.error))")
             }
         }
         

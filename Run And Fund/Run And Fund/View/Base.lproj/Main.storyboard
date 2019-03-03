@@ -266,6 +266,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="LWl-R6-GOo" id="poy-GE-Fwl"/>
+                                    <outlet property="delegate" destination="LWl-R6-GOo" id="WwV-Cg-aVt"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -280,11 +281,27 @@
                     </view>
                     <connections>
                         <outlet property="tableViewOutlet" destination="lrL-Ob-Dxx" id="UA7-it-i6z"/>
+                        <segue destination="e9e-VZ-esd" kind="show" identifier="goToCharityConfig" id="WLo-Eq-y6P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Oy-1P-Zbk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2668" y="3.1484257871064472"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="v3c-z7-7wS">
+            <objects>
+                <viewController id="e9e-VZ-esd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l0P-ta-ygb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="UA2-fQ-GFh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6VD-4y-suT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3666" y="-33"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OvR-Z4-KLF">
