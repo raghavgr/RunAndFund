@@ -11,6 +11,7 @@
 		1DA84A56222B2E91004F5688 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DA84A55222B2E91004F5688 /* GoogleService-Info.plist */; };
 		1DA84A58222B4909004F5688 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA84A57222B4909004F5688 /* LoginViewController.swift */; };
 		1DA84A5A222B54E6004F5688 /* CharitySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA84A59222B54E6004F5688 /* CharitySelectionViewController.swift */; };
+		1DA84A5C222BA94E004F5688 /* CharityPerMileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA84A5B222BA94E004F5688 /* CharityPerMileViewController.swift */; };
 		1DE69503222B0B1D000DEA0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE69502222B0B1D000DEA0B /* AppDelegate.swift */; };
 		1DE69505222B0B1D000DEA0B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE69504222B0B1D000DEA0B /* WelcomeViewController.swift */; };
 		1DE69508222B0B1D000DEA0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DE69506222B0B1D000DEA0B /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		1DA84A55222B2E91004F5688 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1DA84A57222B4909004F5688 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1DA84A59222B54E6004F5688 /* CharitySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitySelectionViewController.swift; sourceTree = "<group>"; };
+		1DA84A5B222BA94E004F5688 /* CharityPerMileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityPerMileViewController.swift; sourceTree = "<group>"; };
 		1DE694FF222B0B1D000DEA0B /* Run And Fund.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Run And Fund.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DE69502222B0B1D000DEA0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DE69504222B0B1D000DEA0B /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 				1DA84A50222B1A36004F5688 /* SignUpViewController.swift */,
 				1DA84A57222B4909004F5688 /* LoginViewController.swift */,
 				1DA84A59222B54E6004F5688 /* CharitySelectionViewController.swift */,
+				1DA84A5B222BA94E004F5688 /* CharityPerMileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DA84A5C222BA94E004F5688 /* CharityPerMileViewController.swift in Sources */,
 				1DA84A58222B4909004F5688 /* LoginViewController.swift in Sources */,
 				1DA84A51222B1A36004F5688 /* SignUpViewController.swift in Sources */,
 				1DA84A5A222B54E6004F5688 /* CharitySelectionViewController.swift in Sources */,

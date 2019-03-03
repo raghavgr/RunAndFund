@@ -291,17 +291,33 @@
         <!--Charity Per Miles-->
         <scene sceneID="v3c-z7-7wS">
             <objects>
-                <viewController title="Charity Per Miles" id="e9e-VZ-esd" sceneMemberID="viewController">
+                <viewController title="Charity Per Miles" id="e9e-VZ-esd" customClass="CharityPerMileViewController" customModule="Run_And_Fund" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l0P-ta-ygb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36x-9z-Lzb">
+                                <rect key="frame" x="16" y="80" width="343" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UA2-fQ-GFh" firstAttribute="trailing" secondItem="36x-9z-Lzb" secondAttribute="trailing" constant="16" id="39U-xv-Ai4"/>
+                            <constraint firstItem="36x-9z-Lzb" firstAttribute="top" secondItem="UA2-fQ-GFh" secondAttribute="top" constant="16" id="bYa-WS-XOE"/>
+                            <constraint firstItem="36x-9z-Lzb" firstAttribute="leading" secondItem="UA2-fQ-GFh" secondAttribute="leading" constant="16" id="bvM-Eq-422"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="UA2-fQ-GFh"/>
                     </view>
+                    <connections>
+                        <outlet property="userNameLabel" destination="36x-9z-Lzb" id="Ao7-25-jFJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6VD-4y-suT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3666" y="-33"/>
+            <point key="canvasLocation" x="3664.8000000000002" y="-33.733133433283363"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OvR-Z4-KLF">
