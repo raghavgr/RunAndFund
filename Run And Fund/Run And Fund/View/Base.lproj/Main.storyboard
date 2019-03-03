@@ -256,17 +256,35 @@
         <!--Charity Selection -->
         <scene sceneID="1fA-1K-Z7J">
             <objects>
-                <viewController title="Charity Selection " id="LWl-R6-GOo" sceneMemberID="viewController">
+                <viewController title="Charity Selection " id="LWl-R6-GOo" customClass="CharitySelectionViewController" customModule="Run_And_Fund" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1CA-Ci-hjN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lrL-Ob-Dxx">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="LWl-R6-GOo" id="poy-GE-Fwl"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lrL-Ob-Dxx" firstAttribute="bottom" secondItem="TH6-Xt-pkW" secondAttribute="bottom" id="cP4-Iw-fE3"/>
+                            <constraint firstItem="lrL-Ob-Dxx" firstAttribute="leading" secondItem="TH6-Xt-pkW" secondAttribute="leading" id="iBZ-rH-Er5"/>
+                            <constraint firstItem="lrL-Ob-Dxx" firstAttribute="top" secondItem="TH6-Xt-pkW" secondAttribute="top" id="riA-r1-NfN"/>
+                            <constraint firstItem="lrL-Ob-Dxx" firstAttribute="trailing" secondItem="TH6-Xt-pkW" secondAttribute="trailing" id="wO5-jk-sye"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="TH6-Xt-pkW"/>
                     </view>
+                    <connections>
+                        <outlet property="tableViewOutlet" destination="lrL-Ob-Dxx" id="UA7-it-i6z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Oy-1P-Zbk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2668" y="4"/>
+            <point key="canvasLocation" x="2668" y="3.1484257871064472"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OvR-Z4-KLF">
