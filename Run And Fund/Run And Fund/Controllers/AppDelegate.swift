@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // requesting location authorization
         let locationManager = LocationManager.shared
-     //   locationManager.requestWhenInUseAuthorization()
+        locationManager.requestWhenInUseAuthorization()
         locationManager.requestAlwaysAuthorization()
         return true
     }

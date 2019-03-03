@@ -111,6 +111,7 @@ class RunMainScreenViewController: BackgroundViewController
     }
     
     private func startRun() {
+        mapView.removeOverlays(mapView.overlays)
         introLabel.isHidden = true
         unitsView.isHidden = false
         startButton.isHidden = true
@@ -134,7 +135,7 @@ class RunMainScreenViewController: BackgroundViewController
     
     private func startLocationUpdates() {
         locationManager.activityType = .fitness
-        locationManager.distanceFilter = 3
+        locationManager.distanceFilter = 1
     }
     
     private func saveRun()
@@ -250,6 +251,7 @@ extension RunMainScreenViewController: SegueHandlerType {
         case .details:
             let destination = segue.destination as! RunDetailedViewController
             destination.run = run
+            destination.donationAmount = charityPerMile
         }
     }
 }
@@ -270,6 +272,11 @@ extension RunMainScreenViewController:CLLocationManagerDelegate {
             if let lastLocation = locationList.last {
                 let delta = newLocation.distance(from: lastLocation)
                 distance = distance + Measurement(value: delta, unit: UnitLength.meters)
+                let coordinates = [lastLocation.coordinate, newLocation.coordinate]
+                mapView.addOverlay(MKPolyline(coordinates: coordinates, count: 2))
+                let region = MKCoordinateRegion(center: newLocation.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
+                mapView.setRegion(region, animated: true)
+
             }
             
             locationList.append(newLocation)
@@ -280,5 +287,17 @@ extension RunMainScreenViewController:CLLocationManagerDelegate {
 extension Date {
     func currentTimeMillis() -> Int64! {
         return Int64(self.timeIntervalSince1970 * 1000)
+    }
+}
+
+extension RunMainScreenViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        guard let polyline = overlay as? MKPolyline else {
+            return MKOverlayRenderer(overlay: overlay)
+        }
+        let renderer = MKPolylineRenderer(polyline: polyline)
+        renderer.strokeColor = .blue
+        renderer.lineWidth = 3
+        return renderer
     }
 }
