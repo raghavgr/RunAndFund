@@ -253,10 +253,10 @@
             </objects>
             <point key="canvasLocation" x="1832.8" y="599.55022488755628"/>
         </scene>
-        <!--View Controller-->
+        <!--Charity Selection -->
         <scene sceneID="1fA-1K-Z7J">
             <objects>
-                <viewController id="LWl-R6-GOo" sceneMemberID="viewController">
+                <viewController title="Charity Selection " id="LWl-R6-GOo" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1CA-Ci-hjN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
