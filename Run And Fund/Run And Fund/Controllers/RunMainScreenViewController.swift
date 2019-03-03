@@ -9,7 +9,11 @@
 import UIKit
 import CoreLocation
 import MapKit
-class RunMainScreenViewController: BackgroundViewController {
+import SVProgressHUD
+import Firebase
+
+class RunMainScreenViewController: BackgroundViewController
+{
     
     // Start & Run View configurations
     @IBOutlet weak var introLabel: UIView!
@@ -138,6 +142,31 @@ class RunMainScreenViewController: BackgroundViewController {
         CoreDataStack.saveContext()
         
         run = newRun
+    }
+    
+    
+    @IBAction func logoutIsClicked(_ sender: UIBarButtonItem)
+    {
+            SVProgressHUD.show()
+            do
+            {
+                try Auth.auth().signOut()
+                
+                // To take user back to rootview i.e the first screen of our app.
+                
+                SVProgressHUD.showSuccess(withStatus: "Sucessfully Logged out")
+                
+                navigationController?.popToRootViewController(animated: true)
+            }
+            catch
+            {
+                let errorMessage:String = error.localizedDescription.description
+                
+                SVProgressHUD.showError(withStatus:errorMessage)
+                
+                print(error.localizedDescription)
+            }
+        
     }
     
 }

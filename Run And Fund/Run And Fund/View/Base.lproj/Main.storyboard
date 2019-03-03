@@ -457,6 +457,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="4Tb-Oq-7Vj"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Run &amp; Fund" id="NJd-HX-HFg">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="cuv-Ox-zWd">
+                            <connections>
+                                <action selector="logoutIsClicked:" destination="Kor-L7-NRI" id="jut-pZ-090"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="distanceLabel" destination="n4f-S5-GNA" id="5TW-Rl-bUQ"/>
                         <outlet property="introLabel" destination="fKD-XO-v4q" id="wJH-6T-r2P"/>
