@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import SVProgressHUD
 
 class CharitySelectionViewController: UIViewController, UITableViewDataSource
 {
@@ -24,6 +25,7 @@ class CharitySelectionViewController: UIViewController, UITableViewDataSource
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        SVProgressHUD.show()
         getCharityData(url:"\(baseURL)\(APP_ID)")
         navigationItem.hidesBackButton = true
 
@@ -78,6 +80,8 @@ class CharitySelectionViewController: UIViewController, UITableViewDataSource
                 }
 
                 self.tableViewOutlet.reloadData()
+                
+                SVProgressHUD.dismiss()
             }
             
             if (response.result.isFailure)
