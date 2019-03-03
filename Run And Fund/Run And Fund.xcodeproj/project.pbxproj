@@ -458,7 +458,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 533URL2368;
+				DEVELOPMENT_TEAM = KQ67BZRB9J;
 				INFOPLIST_FILE = "Run And Fund/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -477,7 +477,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 533URL2368;
+				DEVELOPMENT_TEAM = KQ67BZRB9J;
 				INFOPLIST_FILE = "Run And Fund/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

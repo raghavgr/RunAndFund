@@ -50,6 +50,8 @@ class CharitySelectionViewController: UIViewController, UITableViewDataSource, U
         cell.textLabel?.lineBreakMode = .byWordWrapping
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 15.0)
         
+        cell.backgroundColor = UIColor(red: 243, green: 173, blue: 97, alpha: 0)
+        
         return cell
     }
     
