@@ -20,6 +20,14 @@
 		1DE6950A222B0B22000DEA0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DE69509222B0B22000DEA0B /* Assets.xcassets */; };
 		1DE6950D222B0B22000DEA0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DE6950B222B0B22000DEA0B /* LaunchScreen.storyboard */; };
 		36100086E2F20B17E545DE81 /* Pods_Run_And_Fund.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D8289A91E8F0F6CBAE5772 /* Pods_Run_And_Fund.framework */; };
+		C1BE59D2222BD6D000A6A289 /* RunAndFund.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1BE59D0222BD6D000A6A289 /* RunAndFund.xcdatamodeld */; };
+		C1BE59D4222BD72200A6A289 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE59D3222BD72200A6A289 /* CoreDataStack.swift */; };
+		C1BE59D9222BD75C00A6A289 /* MulticolorPolyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE59D5222BD75C00A6A289 /* MulticolorPolyline.swift */; };
+		C1BE59DA222BD75C00A6A289 /* FormatDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE59D6222BD75C00A6A289 /* FormatDisplay.swift */; };
+		C1BE59DB222BD75C00A6A289 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE59D7222BD75C00A6A289 /* LocationManager.swift */; };
+		C1BE59DC222BD75C00A6A289 /* UnitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE59D8222BD75C00A6A289 /* UnitExtensions.swift */; };
+		C1BE59DF222BDBE600A6A289 /* StoryboardSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE59DE222BDBE600A6A289 /* StoryboardSupport.swift */; };
+		C1BE59E1222BDCDA00A6A289 /* RunDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE59E0222BDCDA00A6A289 /* RunDetailedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +48,14 @@
 		38AA51072B9CAA9FFBB8BECC /* Pods-Run And Fund.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Run And Fund.release.xcconfig"; path = "Pods/Target Support Files/Pods-Run And Fund/Pods-Run And Fund.release.xcconfig"; sourceTree = "<group>"; };
 		74B7E330C903CF4E68A2CED6 /* Pods-Run And Fund.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Run And Fund.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Run And Fund/Pods-Run And Fund.debug.xcconfig"; sourceTree = "<group>"; };
 		89D8289A91E8F0F6CBAE5772 /* Pods_Run_And_Fund.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Run_And_Fund.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1BE59D1222BD6D000A6A289 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		C1BE59D3222BD72200A6A289 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		C1BE59D5222BD75C00A6A289 /* MulticolorPolyline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticolorPolyline.swift; sourceTree = "<group>"; };
+		C1BE59D6222BD75C00A6A289 /* FormatDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatDisplay.swift; sourceTree = "<group>"; };
+		C1BE59D7222BD75C00A6A289 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		C1BE59D8222BD75C00A6A289 /* UnitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitExtensions.swift; sourceTree = "<group>"; };
+		C1BE59DE222BDBE600A6A289 /* StoryboardSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardSupport.swift; sourceTree = "<group>"; };
+		C1BE59E0222BDCDA00A6A289 /* RunDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunDetailedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +81,7 @@
 				1DA84A59222B54E6004F5688 /* CharitySelectionViewController.swift */,
 				1DA84A5B222BA94E004F5688 /* CharityPerMileViewController.swift */,
 				1DA84A5F222BC5C4004F5688 /* RunMainScreenViewController.swift */,
+				C1BE59E0222BDCDA00A6A289 /* RunDetailedViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -80,6 +97,8 @@
 		1DA84A54222B1AA7004F5688 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C1BE59D0222BD6D000A6A289 /* RunAndFund.xcdatamodeld */,
+				C1BE59D3222BD72200A6A289 /* CoreDataStack.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -105,6 +124,7 @@
 		1DE69501222B0B1D000DEA0B /* Run And Fund */ = {
 			isa = PBXGroup;
 			children = (
+				C1BE59DD222BD76400A6A289 /* Util */,
 				1DA84A54222B1AA7004F5688 /* Model */,
 				1DA84A53222B1A7C004F5688 /* View */,
 				1DA84A52222B1A4A004F5688 /* Controllers */,
@@ -131,6 +151,18 @@
 				89D8289A91E8F0F6CBAE5772 /* Pods_Run_And_Fund.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C1BE59DD222BD76400A6A289 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				C1BE59DE222BDBE600A6A289 /* StoryboardSupport.swift */,
+				C1BE59D7222BD75C00A6A289 /* LocationManager.swift */,
+				C1BE59D6222BD75C00A6A289 /* FormatDisplay.swift */,
+				C1BE59D5222BD75C00A6A289 /* MulticolorPolyline.swift */,
+				C1BE59D8222BD75C00A6A289 /* UnitExtensions.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +199,11 @@
 				TargetAttributes = {
 					1DE694FE222B0B1D000DEA0B = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -260,12 +297,20 @@
 			files = (
 				1DA84A5C222BA94E004F5688 /* CharityPerMileViewController.swift in Sources */,
 				1DA84A58222B4909004F5688 /* LoginViewController.swift in Sources */,
+				C1BE59DF222BDBE600A6A289 /* StoryboardSupport.swift in Sources */,
 				1DA84A51222B1A36004F5688 /* SignUpViewController.swift in Sources */,
 				1DA84A5A222B54E6004F5688 /* CharitySelectionViewController.swift in Sources */,
 				1DE69505222B0B1D000DEA0B /* WelcomeViewController.swift in Sources */,
+				C1BE59DC222BD75C00A6A289 /* UnitExtensions.swift in Sources */,
+				C1BE59D9222BD75C00A6A289 /* MulticolorPolyline.swift in Sources */,
+				C1BE59D4222BD72200A6A289 /* CoreDataStack.swift in Sources */,
+				C1BE59D2222BD6D000A6A289 /* RunAndFund.xcdatamodeld in Sources */,
+				C1BE59E1222BDCDA00A6A289 /* RunDetailedViewController.swift in Sources */,
 				1DA84A5E222BC263004F5688 /* BackgroundViewController.swift in Sources */,
+				C1BE59DA222BD75C00A6A289 /* FormatDisplay.swift in Sources */,
 				1DE69503222B0B1D000DEA0B /* AppDelegate.swift in Sources */,
 				1DA84A60222BC5C4004F5688 /* RunMainScreenViewController.swift in Sources */,
+				C1BE59DB222BD75C00A6A289 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,7 +458,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KQ67BZRB9J;
+				DEVELOPMENT_TEAM = 533URL2368;
 				INFOPLIST_FILE = "Run And Fund/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -432,7 +477,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KQ67BZRB9J;
+				DEVELOPMENT_TEAM = 533URL2368;
 				INFOPLIST_FILE = "Run And Fund/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -467,6 +512,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C1BE59D0222BD6D000A6A289 /* RunAndFund.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C1BE59D1222BD6D000A6A289 /* Model.xcdatamodel */,
+			);
+			currentVersion = C1BE59D1222BD6D000A6A289 /* Model.xcdatamodel */;
+			path = RunAndFund.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1DE694F7222B0B1D000DEA0B /* Project object */;
 }
