@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSMotionUsageDescription</key>
+	<string>Run and Fund needs motion usage access!</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Run and Fund needs access to locaiton always!</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Run and Fund needs to access your location always for accurate collection of data</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Run and Fund needs access to your location in order to record and track your run!</string>
 	<key>CFBundleDevelopmentRegion</key>
