@@ -9,8 +9,7 @@
 import UIKit
 import Firebase
 
-class CharityPerMileViewController: BackgroundViewController {
-class CharityPerMileViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSource
+class CharityPerMileViewController: BackgroundViewController, UIPickerViewDelegate,UIPickerViewDataSource
 {
 
     
