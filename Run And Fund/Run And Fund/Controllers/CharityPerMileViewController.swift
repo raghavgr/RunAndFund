@@ -9,13 +9,19 @@
 import UIKit
 import Firebase
 
-class CharityPerMileViewController: UIViewController {
+class CharityPerMileViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSource
+{
+        let currencyNameArray = ["2"]
+    
 
     @IBOutlet var userNameLabel: UILabel!
     
     var charitySelected: String?
     
     @IBOutlet var charityNameOutlet: UILabel!
+    
+    @IBOutlet var charityPickerOutlet: UIPickerView!
+    
     
     override func viewDidLoad()
     {
@@ -32,6 +38,16 @@ class CharityPerMileViewController: UIViewController {
         let name:String = (Auth.auth().currentUser?.displayName)!
         
         userNameLabel.text = "Hello, \(String(describing: name))"
+    }
+    
+    
+   // Picker data source method
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        <#code#>
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        <#code#>
     }
 
 }
