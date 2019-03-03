@@ -41,7 +41,7 @@ class ProfileViewController: BackgroundViewController {
         userIdLabel.text = userId
         emailLabel.text = email
         charityTitleLabel.text = charityTitle
-        amntDonated.text = "Donating \(charityPerMile)/mile"
+        amntDonated.text = "Donating \(charityPerMile)"
         
     }
     

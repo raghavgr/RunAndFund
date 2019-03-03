@@ -26,8 +26,6 @@ class WelcomeViewController: BackgroundViewController
         imageView.frame = CGRect(x: 60, y: 120, width:300, height:300)
         view.addSubview(imageView)
         
-        
-        
         // changes made to show error in dark mode
         SVProgressHUD.setDefaultStyle(.dark)
         SVProgressHUD.setFont(UIFont.boldSystemFont(ofSize: 17))
