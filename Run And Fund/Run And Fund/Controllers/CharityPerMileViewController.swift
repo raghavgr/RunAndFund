@@ -13,12 +13,16 @@ class CharityPerMileViewController: UIViewController {
 
     @IBOutlet var userNameLabel: UILabel!
     
+    var charitySelected: String?
+    
+    @IBOutlet var charityNameOutlet: UILabel!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         displayWelcomeMessage()
-
+        
+        charityNameOutlet.text = charitySelected!
         // Do any additional setup after loading the view.
     }
     

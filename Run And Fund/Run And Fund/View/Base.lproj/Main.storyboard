@@ -302,16 +302,35 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charity selected by you is:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPk-rY-xOJ">
+                                <rect key="frame" x="16" y="154" width="343" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charity Value" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9I-KJ-G15">
+                                <rect key="frame" x="16" y="194" width="343" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="K9I-KJ-G15" firstAttribute="leading" secondItem="l0P-ta-ygb" secondAttribute="leading" constant="16" id="2PO-Ga-ViA"/>
                             <constraint firstItem="UA2-fQ-GFh" firstAttribute="trailing" secondItem="36x-9z-Lzb" secondAttribute="trailing" constant="16" id="39U-xv-Ai4"/>
+                            <constraint firstItem="UA2-fQ-GFh" firstAttribute="trailing" secondItem="tPk-rY-xOJ" secondAttribute="trailing" constant="16" id="EGS-3b-D2g"/>
+                            <constraint firstAttribute="trailing" secondItem="K9I-KJ-G15" secondAttribute="trailing" constant="16" id="EH6-7D-B7s"/>
+                            <constraint firstItem="tPk-rY-xOJ" firstAttribute="leading" secondItem="UA2-fQ-GFh" secondAttribute="leading" constant="16" id="Xs2-FT-59s"/>
+                            <constraint firstItem="tPk-rY-xOJ" firstAttribute="top" secondItem="36x-9z-Lzb" secondAttribute="bottom" constant="50" id="aFp-oV-aJX"/>
                             <constraint firstItem="36x-9z-Lzb" firstAttribute="top" secondItem="UA2-fQ-GFh" secondAttribute="top" constant="16" id="bYa-WS-XOE"/>
                             <constraint firstItem="36x-9z-Lzb" firstAttribute="leading" secondItem="UA2-fQ-GFh" secondAttribute="leading" constant="16" id="bvM-Eq-422"/>
+                            <constraint firstItem="K9I-KJ-G15" firstAttribute="top" secondItem="tPk-rY-xOJ" secondAttribute="bottom" constant="16" id="reu-El-Lfc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UA2-fQ-GFh"/>
                     </view>
                     <connections>
+                        <outlet property="charityNameOutlet" destination="K9I-KJ-G15" id="ozW-O6-0O1"/>
                         <outlet property="userNameLabel" destination="36x-9z-Lzb" id="Ao7-25-jFJ"/>
                     </connections>
                 </viewController>

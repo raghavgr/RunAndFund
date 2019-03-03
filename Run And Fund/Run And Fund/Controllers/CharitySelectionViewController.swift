@@ -18,6 +18,7 @@ class CharitySelectionViewController: UIViewController, UITableViewDataSource, U
     let APP_ID = "dd27482e8293f445c4bcf895428745fe"
     
     @IBOutlet var tableViewOutlet: UITableView!
+    var charitySelected:String = ""
     
     
     var charityArray:[String] = []
@@ -57,7 +58,7 @@ class CharitySelectionViewController: UIViewController, UITableViewDataSource, U
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        let charitySelected = charityArray[indexPath.row]
+         charitySelected = charityArray[indexPath.row]
         
         let alert = UIAlertController(title:"Thank You!!!", message:"You have selected \(charitySelected) as your charity category", preferredStyle:.alert)
         
@@ -118,6 +119,18 @@ class CharitySelectionViewController: UIViewController, UITableViewDataSource, U
             }
         }
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if (segue.identifier == "goToCharityConfig")
+        {
+            // getting instance of secondViewController
+            let destination = segue.destination as! CharityPerMileViewController
+            
+            // setting data to screen 2 variable
+            destination.charitySelected = charitySelected
+        }
     }
     
     
