@@ -21,6 +21,7 @@ class RunDetailedViewController: BackgroundViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
         configureView()
     }
     

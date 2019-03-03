@@ -32,6 +32,7 @@ class RunMainScreenViewController: BackgroundViewController
     
     private var run:Run?
     private let locationManager = LocationManager.shared
+    private var region:MKCoordinateRegion?
     private var seconds = 0
     private var timer: Timer?
     private var distance = Measurement(value: 0, unit: UnitLength.meters)
@@ -40,7 +41,7 @@ class RunMainScreenViewController: BackgroundViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+        //self.mapView.setRegion(region!, animated: true)
         navigationItem.hidesBackButton = true
         unitsView.isHidden = true
         startButton.layer.cornerRadius = 30
@@ -48,6 +49,14 @@ class RunMainScreenViewController: BackgroundViewController
         stopButton.layer.cornerRadius = 30
         stopButton.clipsToBounds = true
         stopButton.layer.zPosition = 1
+        
+        if (CLLocationManager.locationServicesEnabled() == true) {
+            
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+            
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -119,11 +128,8 @@ class RunMainScreenViewController: BackgroundViewController
     }
     
     private func startLocationUpdates() {
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.activityType = .fitness
-        locationManager.distanceFilter = 10
-        locationManager.startUpdatingLocation()
+        locationManager.distanceFilter = 3
     }
     
     private func saveRun() {
@@ -189,10 +195,13 @@ extension RunMainScreenViewController: SegueHandlerType {
 
 extension RunMainScreenViewController:CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations.last as! CLLocation
-        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.02))
-        self.mapView.setRegion(region, animated: true)
+        if let location = locations.last{
+            let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+             self.region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+            self.mapView.setRegion(region!, animated: true)
+        }
+
+        
         for newLocation in locations {
             let howRecent = newLocation.timestamp.timeIntervalSinceNow
             guard newLocation.horizontalAccuracy < 20 && abs(howRecent) < 10 else { continue }
