@@ -36,12 +36,17 @@ class RunMainScreenViewController: BackgroundViewController
     private var timer: Timer?
     private var distance = Measurement(value: 0, unit: UnitLength.meters)
     private var locationList: [CLLocation] = []
+    
+    private var charityPerMile:String = ""
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         navigationItem.hidesBackButton = true
+        
+        //Added method retrive charity per mile data  from firebase
+        retriveCharityPerMileDetail()
         unitsView.isHidden = true
         startButton.layer.cornerRadius = 30
         startButton.clipsToBounds = true
@@ -126,7 +131,8 @@ class RunMainScreenViewController: BackgroundViewController
         locationManager.startUpdatingLocation()
     }
     
-    private func saveRun() {
+    private func saveRun()
+    {
         let newRun = Run(context: CoreDataStack.context)
         newRun.distance = distance.value
         newRun.duration = Int16(seconds)
@@ -168,6 +174,29 @@ class RunMainScreenViewController: BackgroundViewController
                 print(error.localizedDescription)
             }
         
+    }
+    
+     //Added method retrive charity per mile data  from firebase
+    func retriveCharityPerMileDetail()
+    {
+        let currentUser = Auth.auth().currentUser
+        let userID = currentUser?.uid
+        
+        let demographicReference = Database.database().reference().child(userID!).child("CharityInfo")
+        
+        
+        demographicReference.observeSingleEvent(of: .value, with: { snapshot in
+            
+            if !snapshot.exists()
+            {
+                self.charityPerMile = ""
+                return
+                
+            }
+            self.charityPerMile = snapshot.childSnapshot(forPath: "charityPerMile").value as! String
+            print(self.charityPerMile)
+            
+        })
     }
     
 }
