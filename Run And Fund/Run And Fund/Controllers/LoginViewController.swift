@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import SVProgressHUD
 
-class LoginViewController: UIViewController
+class LoginViewController: BackgroundViewController
 {
 
     @IBOutlet var emailIDFieldOutlet: UITextField!

@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import SVProgressHUD
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: BackgroundViewController {
 
     @IBOutlet var nameFieldOutlet: UITextField!
     

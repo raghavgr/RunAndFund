@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class CharityPerMileViewController: UIViewController {
+class CharityPerMileViewController: BackgroundViewController {
 
     @IBOutlet var userNameLabel: UILabel!
     
