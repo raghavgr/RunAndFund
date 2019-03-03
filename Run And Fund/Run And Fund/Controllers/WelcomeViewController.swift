@@ -51,7 +51,7 @@ class WelcomeViewController: BackgroundViewController
     
     func performSegueFunc()
     {
-        self.performSegue(withIdentifier:"goToGetStarted" , sender: self)
+        self.performSegue(withIdentifier:"goToMainScreen" , sender: self)
     }
 
 

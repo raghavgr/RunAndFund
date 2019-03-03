@@ -44,7 +44,7 @@ class LoginViewController: BackgroundViewController
             else
             {
                 SVProgressHUD.showSuccess(withStatus: "Sucessfully Logged In")
-                self.performSegue(withIdentifier:"goToGetStarted", sender: self)
+                self.performSegue(withIdentifier:"goToMainScreen", sender: self)
             }
         }
     }
