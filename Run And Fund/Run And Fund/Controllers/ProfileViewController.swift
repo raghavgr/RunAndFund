@@ -10,17 +10,22 @@ import UIKit
 import Firebase
 import SVProgressHUD
 
-class ProfileViewController: BackgroundViewController {
+class ProfileViewController: BackgroundViewController
+{
     
     var user:User!
-     var charityPerMile:String = ""
-     var charityTitle:String = ""
-    @IBOutlet weak var userIdLabel: UILabel!
+    var charityPerMile:String = ""
+    var charityTitle:String = ""
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var charityTitleLabel: UILabel!
     @IBOutlet weak var amntDonated: UILabel!
-    override func viewDidLoad() {
+    
+    @IBOutlet var welcomeLabelOutlet: UILabel!
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+        displayWelcomeMessage()
 
         // Do any additional setup after loading the view.
         // function for retrieving user charity info
@@ -35,10 +40,8 @@ class ProfileViewController: BackgroundViewController {
         view.addSubview(imageView)
         
         // labels
-        let userId = user.uid
         let email = user.email
         
-        userIdLabel.text = userId
         emailLabel.text = email
         charityTitleLabel.text = charityTitle
         amntDonated.text = "Donating \(charityPerMile)"
@@ -91,14 +94,13 @@ class ProfileViewController: BackgroundViewController {
                         print(error.localizedDescription)
                     }
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func displayWelcomeMessage()
+    {
+        let name:String = (Auth.auth().currentUser?.displayName)!
+        
+        welcomeLabelOutlet.text = "Hello, \(String(describing: name))"
     }
-    */
 
 }
