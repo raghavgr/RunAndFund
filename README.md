@@ -45,7 +45,7 @@ We would love you for the contribution to **YourLibraryName**, check the ``LICEN
 
 ## Meta
 
-Your Name – [@Linkedin](https://linkedin.com/in/sairaghavgr) – sairsmgrandhi@example.com
+Sai Grandhi – [@Linkedin](https://linkedin.com/in/sairaghavgr) – sairsmgrandhi@gmail.com
 
 Distributed under the MIT license
 
