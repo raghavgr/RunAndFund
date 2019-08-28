@@ -36,12 +36,8 @@ https://gfycat.com/colossalradiantcero
 
 ## Functionality
 
-Run & Fund is an iOS application that allows users to select their favorite charity organization and donate to it based on the number of miles they ran. The application gives users the opportunity to browse several different non-profit organizations and select the one appropriate for them. Then the user can select a fixed rate by which they would like their donations to be sent. Along with this, users can track their runs real-time and see essential quantitative details such as pace, distance, and duration.
+Run & Fund is an iOS application that allows users to select their favorite charity organization and donate to it based on the number of miles they ran. The application gives users the opportunity to browse several different non-profit organizations and select the one appropriate for them. Then the user can select a fixed rate by which they would like their donations to be sent. Along with this, users can track their runs real-time and see essential quantitative details such as pace, distance, and duration. At the end of each run, the path taken by the user is displayed on a map. The path is highlighted with colors ranging from light green to dark red to signify the speed of the user at those locations.
 
-
-## Contribute
-
-We would love you for the contribution to **YourLibraryName**, check the ``LICENSE`` file for more info.
 
 ## Meta
 
